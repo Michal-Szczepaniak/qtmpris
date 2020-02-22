@@ -1,11 +1,11 @@
 include(../common.pri)
 
 TEMPLATE = lib
-CONFIG += qt link_pkgconfig
+CONFIG += qt static #link_pkgconfig
 
 QT = core dbus qml
 
-PKGCONFIG = dbusextended-qt5
+#PKGCONFIG = dbusextended-qt5
 TARGET = $${MPRISQTLIB}
 
 QMAKE_SUBSTITUTES = $${TARGET}.prf.in
@@ -16,6 +16,8 @@ DEFINES += MPRIS_QT_LIBRARY
 # Note that we HAVE TO also create prl config as QMake implementation
 # mixes both of them together.
 CONFIG += create_pc create_prl no_install_prl
+
+INCLUDEPATH += /usr/include/qt5/DBusExtended/
 
 SOURCES += \
     mpris.cpp \
