@@ -65,3 +65,8 @@ QMAKE_PKGCONFIG_LIBDIR = $$target.path
 QMAKE_PKGCONFIG_INCDIR = $$headers.path
 QMAKE_PKGCONFIG_DESTDIR = pkgconfig
 QMAKE_PKGCONFIG_NAME = MprisQt
+
+# qdbusextended
+PRE_TARGETDEPS += $$OUT_PWD/../../qtdbusextended/src/libdbusextended-qt5.a
+INCLUDEPATH += ../../qtdbusextended/src/
+LIBS += -L$$OUT_PWD/../../qtdbusextended/src/ -ldbusextended-qt5
